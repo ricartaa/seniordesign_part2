@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
     // MAC-address of Bluetooth module (you must edit this line)
-    private static String address = "00:15:FF:F2:19:5F";
+    private static String address = "98:d3:91:Fd:44:98";
 
     /** Called when the activity is first created. */
     @Override
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                         if (endOfLineIndex > 0) {                                            // if end-of-line,
                             String sbprint = sb.substring(0, endOfLineIndex);               // extract string
                             sb.delete(0, sb.length());                                      // and clear
-                            txtArduino.setText("Data from Arduino: " + sbprint);            // update TextView
+                            txtArduino.setText("Voltage: " + sbprint);            // update TextView
                             btnOff.setEnabled(true);
                             btnOn.setEnabled(true);
                         }
@@ -74,13 +74,6 @@ public class MainActivity extends AppCompatActivity {
 
         btAdapter = BluetoothAdapter.getDefaultAdapter();       // get Bluetooth adapter
         checkBTState();
-
-
-
-
-
-
-
 
 
         /*
